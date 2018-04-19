@@ -1,0 +1,47 @@
+#common-elements-list code:before {
+    content: "\003C";
+}
+#common-elements-list code:after {
+    content: "\003E";
+}
+#common-elements-list > .row > dt {
+    margin-right: 0;
+}
+#common-elements-list > .row > dd {
+    margin-left: 0;
+}
+#common-elements-list > .row:hover > dt {
+    border-right: 1px dotted lightgrey;
+}
+#common-elements-list > .row:hover > dt code {
+    filter: invert(86%);
+}
+#common-elements-list > .row:hover > dd {
+    margin-left: -1px;
+}
+ul.with-tags li,
+ol.with-tags li,
+dl.with-tags dd,
+dl.with-tags dt,
+blockquote.with-tags footer {
+    position: relative;
+}
+.with-tags .tag {
+    position: absolute;
+    display: none;
+    left: -4rem;
+    top: 0.2rem;
+    font-size: 75%;
+    filter: contrast(40%) brightness(140%);
+}
+ul.with-tags li:hover > .tag,
+ol.with-tags li:hover > .tag,
+dl.with-tags dd:hover > .tag,
+dl.with-tags dt:hover > .tag,
+blockquote.with-tags footer:hover > .tag {
+    display: block;
+}
+
+#base-variables-list {
+    max-width: 32em
+}

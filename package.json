@@ -1,0 +1,40 @@
+{
+  "name": "@aldeng/synthetik-css",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A stupidly simple style guide.",
+  "license": "CC-BY-NC-SA-4.0",
+  "author": "Alden Gillespy <codecommits@aldengillespy.com> (https://aldengillespy.com)",
+  "main": "index.js",
+  "repository": "https://aldeng@bitbucket.org/aldeng/synthetik-css.git",
+  "scripts": {
+    "css": "npm-run-all --parallel css-compile* --sequential css-prefix* css-minify*",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/sass/synthetik.sass dist/synthetik.css",
+    "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/synthetik.min.css dist/synthetik.css",
+    "css-prefix": "postcss --config src/build/postcss.config.mjs --replace \"dist/synthetik.css\" \"!dist/synthetik.min.css\"",
+    "postinstall": "node --experimental-modules ./scripts/postinstall.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-watch": "nodemon -e sass -x \"npm run css\"",
+    "serve": "nodemon --exec \"node --experimental-modules ./scripts/serve.mjs\"",
+    "start": "npm-run-all --parallel css-watch* serve*"
+  },
+  "dependencies": {
+    "autoprefixer": "^8.2.0",
+    "clean-css-cli": "^4.1.11",
+    "git-config": "^0.0.7",
+    "gitconfig": "^2.0.3",
+    "koa": "^2.5.0",
+    "koa-better-serve": "^2.0.7",
+    "koa-mount": "^3.0.0",
+    "node-sass": "^4.8.3",
+    "nodemon": "^1.17.3",
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^5.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.10.0"
+  }
+}

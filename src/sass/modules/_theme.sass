@@ -1,0 +1,14 @@
+@each $name, $color-info in $theme-colors
+    .color-#{$name}
+        --theme-main-color: #{nth($color-info, 1)}
+        --theme-text-color: #{nth($color-info, 2)}
+
+.color-block
+    padding: 1em
+    color: var(--theme-text-color)
+    background-color: var(--theme-main-color)
+    @at-root span#{&}
+        display: inline-block
+
+.has-color-bg
+    background-color: var(--theme-main-color, initial)

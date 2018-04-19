@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" charset="utf-7">
+
+<head>
+    <title>Synthetik CSS: A stupidly simple style guide.</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tajawal:300,400,500,700" />
+    <link rel="stylesheet" href="/assets/synthetik/synthetik.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/examples.style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col pt-4 pb-6">
+                <h1 class="suppend-period display-size-4 mb-4">
+                    <a href="https://synthetik-css.aldengillespy.com">
+                        <strong class="suppend-colon">Synthetik CSS</strong>
+                    </a> The
+                    <em>stupidly</em> #simple style guide</h1>
+                <p class="size-up-1">
+                    So, you ran
+                    <code>yarn run build</code> to make your very own style sheet, and now you want to see how it looks.
+                </p>
+                <p>
+                    This page displays your style as it applies to the HTML elements you've come to know and love.
+                </p>
+                <p class="italic small">
+                    <strong class="suppend-colon">Remember</strong> Changes you make to the master style sheet
+                    <code>./src/sass/synthetik.sass</code> will be reflected on this page
+                    <strong>after</strong> you recompile via
+                    <code>yarn run build</code>.
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <section id="common-elements" class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-size-3">
+                    General elements
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <dl id="common-elements-list" class="col">
+                <div class="row align-items-center">
+                    <dt class="col-1">
+                        <code>h1</code>
+                    </dt>
+                    <dd class="col-7">
+                        <h1>Vivamus sed lacus pellentesque, tempus diam vitae, maximus elit</h1>
+                    </dd>
+                </div>
+                <div class="row align-items-center">
+                    <dt class="col-1">
+                        <code>h2</code>
+                    </dt>
+                    <dd class="col-7">
+                        <h2>Vivamus sed lacus pellentesque, tempus diam vitae, maximus elit</h2>
+                    </dd>
+                </div>
+                <div class="row align-items-center">
+                    <dt class="col-1">
+                        <code>h3</code>
+                    </dt>
+                    <dd class="col-7">
+                        <h3>Vivamus sed lacus pellentesque, tempus diam vitae, maximus elit</h3>
+                    </dd>
+                </div>
+                <div class="row align-items-center">
+                    <dt class="col-1">
+                        <code>h4</code>
+                    </dt>
+                    <dd class="col-7">
+                        <h4>Vivamus sed lacus pellentesque, tempus diam vitae, maximus elit</h4>
+                    </dd>
+                </div>
+                <div class="row align-items-center">
+                    <dt class="col-1">
+                        <code>h5</code>
+                    </dt>
+                    <dd class="col-7">
+                        <h5>Vivamus sed lacus pellentesque, tempus diam vitae, maximus elit</h5>
+                    </dd>
+                </div>
+                <div class="row align-items-center">
+                    <dt class="col-1">
+                        <code>h6</code>
+                    </dt>
+                    <dd class="col-7">
+                        <h6>Vivamus sed lacus pellentesque, tempus diam vitae, maximus elit</h6>
+                    </dd>
+                </div>
+                <div class="row align-items-center">
+                    <dt class="col-1">
+                        <code>p</code>
+                    </dt>
+                    <dd class="col-7">
+                        <p>Nunc ut eros et elit consequat tempus nec sed mi. Morbi consequat non ex id sodales. Aliquam massa
+                            mauris, molestie nec dignissim nec, pellentesque fermentum justo.</p>
+                    </dd>
+                </div>
+                <div class="row align-items-center">
+                    <dt class="col-1">
+                        <code>blockquote</code>
+                    </dt>
+                    <dd class="col-7">
+                        <blockquote class="with-tags">
+                            <p>In sed neque lorem. Duis ac sem et nulla imperdiet dapibus. Ut vestibulum nulla sed suscipit
+                                volutpat. Quisque massa velit, aliquam quis luctus vitae, interdum non metus. In pellentesque,
+                                eros ac gravida vestibulum, metus nisl consequat risus, ut vehicula magna nibh a justo. Donec
+                                diam sapien, congue in tortor mattis, placerat finibus lorem. Mauris elementum egestas sapien,
+                                eget sagittis elit tincidunt eu. Curabitur laoreet accumsan nunc, et aliquet elit dictum
+                                vel. Sed eu viverra orci, consectetur molestie magna.</p>
+                            <footer>
+                                <code class="tag">footer</code>
+                                <cite>Sed eu viverra orci</cite>, consectetur molestie magna, duis vehicula urna eget magna sollicitudin
+                                sagittis.
+                            </footer>
+                        </blockquote>
+                    </dd>
+                </div>
+                <div class="row align-items-center">
+                    <dt class="col-1">
+                        <code>ul</code>
+                    </dt>
+                    <dd class="col-7">
+                        <ul class="with-tags">
+                            <li>
+                                <code class="tag">li</code> Quisque dignissim neque sit amet magna luctus consectetur. Phasellus non lacinia erat.
+                            </li>
+                            <li>
+                                <code class="tag">li</code> Proin ullamcorper pretium felis non tincidunt. Cras purus ante, accumsan sit amet posuere
+                                a, vulputate ac sapien.
+                            </li>
+                            <li>
+                                <code class="tag">li</code> Sed in arcu volutpat, vulputate libero non, dapibus massa. Nam eu porta ipsum.
+                            </li>
+                            <li>
+                                <code class="tag">li</code> Quisque molestie, est at congue dignissim, tortor ex venenatis sem, sit amet facilisis eros
+                                purus vitae urna. Fusce tincidunt laoreet elit a ornare.
+                            </li>
+                        </ul>
+                    </dd>
+                </div>
+                <div class="row align-items-center">
+                    <dt class="col-1">
+                        <code>ol</code>
+                    </dt>
+                    <dd class="col-7">
+                        <ol class="with-tags">
+                            <li>
+                                <code class="tag">li</code> Quisque dignissim neque sit amet magna luctus consectetur. Phasellus non lacinia erat.
+                            </li>
+                            <li>
+                                <code class="tag">li</code> Proin ullamcorper pretium felis non tincidunt. Cras purus ante, accumsan sit amet posuere
+                                a, vulputate ac sapien.
+                            </li>
+                            <li>
+                                <code class="tag">li</code> Nam pulvinar, risus sed suscipit tempus, leo ipsum pretium lorem, sed luctus magna quam
+                                eu odio. Aenean quis nisi sodales, consequat eros ac, laoreet orci.
+                            </li>
+                            <li>
+                                <code class="tag">li</code> Quisque molestie, est at congue dignissim, tortor ex venenatis sem, sit amet facilisis eros
+                                purus vitae urna. Fusce tincidunt laoreet elit a ornare.
+                            </li>
+                        </ol>
+                    </dd>
+                </div>
+                <div class="row align-items-center">
+                    <dt class="col-1">
+                        <code>dl</code>
+                    </dt>
+                    <dd class="col-7">
+                        <dl class="with-tags">
+                            <dt>
+                                <code class="tag">dt</code> Duis imperdiet enim
+                            </dt>
+                            <dd>
+                                <code class="tag">dd</code> Nunc vulputate placerat metus, sit amet feugiat neque tincidunt eu.
+                            </dd>
+                            <dt>
+                                <code class="tag">dt</code> Morbi sit amet
+                            </dt>
+                            <dd>
+                                <code class="tag">dd</code> Aenean eleifend justo rhoncus, laoreet nibh sed, pellentesque quam.
+                            </dd>
+                            <dt>
+                                <code class="tag">dt</code> Aliquam ut turpis
+                            </dt>
+                            <dd>
+                                <code class="tag">dd</code> Suspendisse in faucibus erat, nec pellentesque justo.
+                            </dd>
+                            <dt>
+                                <code class="tag">dt</code> Mauris efficitur
+                            </dt>
+                            <dd>
+                                <code class="tag">dd</code> Mauris faucibus lectus ipsum, et semper lacus interdum in.
+                            </dd>
+                        </dl>
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+    <section id="base-variables" class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-size-3">
+                    Base configuration
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <dl id="base-variables-list" class="col">
+                <div class="row align-items-center">
+                    <dt class="col-1">
+                        Primary color
+                    </dt>
+                    <dd class="col-2">
+                        <span class="color-block color-primary">#254332</span>
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+    <section id="layout-elements" class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-size-3">
+                    Layout elements
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Blocks</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col color-block color-gray">
+                .col
+            </div>
+            <div class="col color-block color-gray">
+                .col
+            </div>
+            <div class="col color-block color-gray">
+                .col
+            </div>
+            <div class="col color-block color-gray">
+                .col
+            </div>
+            <div class="col color-block color-gray">
+                .col
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 color-block color-gray">
+                .col-1
+            </div>
+            <div class="col-2 color-block color-gray">
+                .col-2
+            </div>
+            <div class="col-3 color-block color-gray">
+                .col-3
+            </div>
+            <div class="col-4 color-block color-gray">
+                .col-4
+            </div>
+            <div class="col-5 color-block color-gray">
+                .col-5
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 color-block color-gray">
+                .col-1
+            </div>
+            <div class="col-2 color-block color-gray">
+                .col-2
+            </div>
+            <div class="col-3 color-block color-gray">
+                .col-3
+            </div>
+            <div class="col-4 color-block color-gray">
+                .col-4
+            </div>
+            <div class="col-5 color-block color-gray">
+                .col-5
+            </div>
+            <div class="col-10 color-block color-gray">
+                .col-10
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-1 color-block color-gray">
+                .col-1
+            </div>
+            <div class="col-2 color-block color-gray">
+                .col-2
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 color-block color-gray">
+                .col-3
+            </div>
+            <div class="col-2 color-block color-gray">
+                .col-6
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5 color-block color-gray">
+                .col-5
+            </div>
+            <div class="col-10 color-block color-gray">
+                .col-10
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3>Using theme colors</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 color-block color-primary">
+                .color-primary
+            </div>
+            <div class="col-4 color-block color-secondary">
+                .color-secondary
+            </div>
+            <div class="col-4 color-block color-accent">
+                .color-accent
+            </div>
+            <div class="col-2 color-block color-light">
+                .color-light
+            </div>
+            <div class="col-2 color-block color-dark">
+                .color-dark
+            </div>
+            <div class="col-1 color-block color-white">
+                .color-white
+            </div>
+            <div class="col-1 color-block color-black">
+                .color-black
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Buttons</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="color-primary">Button text</button>
+            </div>
+            <div class="col">
+                <button class="color-secondary">Button text</button>
+            </div>
+            <div class="col">
+                <button class="color-accent">Button text</button>
+            </div>
+            <div class="col">
+                <button class="color-light">Button text</button>
+            </div>
+            <div class="col">
+                <button class="color-dark">Button text</button>
+            </div>
+            <div class="col">
+                <button class="color-white">Button text</button>
+            </div>
+            <div class="col">
+                <button class="color-black">Button text</button>
+            </div>
+        </div>
+    </section>
+    <footer class="container width-fluid mt-7 pt-6 pb-8 has-color-bg color-light center">
+        Footer
+    </footer>
+</body>
+
+</html>

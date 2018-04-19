@@ -1,0 +1,17 @@
+extends: airbnb-base
+rules:
+  import/extensions:
+    - error
+    - always
+    -
+      js: never
+      mjs: never
+  linebreak-style:
+    - error
+    - windows
+settings:
+  import/resolver:
+    node:
+      extensions:
+      - .js
+      - .mjs

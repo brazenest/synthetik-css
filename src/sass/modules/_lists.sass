@@ -1,0 +1,27 @@
+\:root
+
+    --definition-list-vertical-spacing: #{map-get($spacers, 5)}
+    --definition-list-term-weight: #{$definition-list-term-weight}
+    --definition-list-term-vertical-spacing: #{map-get($spacers, 1)}
+    --definition-list-item-spacing: #{map-get($spacers, 4)}
+
+/*
+    Definition lists ( <dl>, <dt>, <dd> )
+        */
+
+dl, .dl
+
+    margin-top: var(--definition-list-vertical-spacing)
+    margin-bottom: var(--definition-list-vertical-spacing)
+
+    dt, .dt
+
+        font-weight: var(--definition-list-term-weight)
+        margin-top: var(--definition-list-term-vertical-spacing)
+        margin-bottom: var(--definition-list-term-vertical-spacing)
+
+    dd, .dd
+
+        & + dt, & + .dt
+
+            margin-top: var(--definition-list-item-spacing)

@@ -1,0 +1,39 @@
+\:root
+    --text-color: #{$text-color}
+    --text-color-inverted: #{invert($text-color)}
+    --body-font-family: var(--base-font-family)
+    --base-font-family: #{$base-font-family}
+    --body-font-size: 1rem
+    +media-breakpoint-down(sm)
+        --base-font-size: #{$base-font-size}
+    +media-breakpoint-up(md)
+        --base-font-size: #{(17 / 16) * $base-font-size}
+    +media-breakpoint-up(lg)
+        --base-font-size: #{(18 / 16) * $base-font-size}
+    +media-breakpoint-up(xl)
+        --base-font-size: #{(19 / 16) * $base-font-size}
+    +media-breakpoint-up(xxl)
+        --base-font-size: #{(20 / 16) * $base-font-size}
+    +media-breakpoint-up(qhd)
+        --base-font-size: #{(22 / 16) * $base-font-size}
+
+body
+
+    color: var(--text-color)
+    font-family: var(--body-font-family)
+    font-size: var(--body-font-size)
+
+html
+
+    font-size: var(--base-font-size, 1rem)
+
+
+// per-element margin and padding adjustment utils
+$element-layout-items: (m: margin, p: padding)
+$element-layout-sides: (t: top, r: right, b: bottom, l: left)
+
+@each $prop-letter, $prop-prefix in $element-layout-items
+    @each $side-letter, $side in $element-layout-sides
+        @each $spacer-index, $spacer-value in $spacers
+            .#{$prop-letter}#{$side-letter}-#{$spacer-index}
+                #{$prop-prefix}-#{$side}: #{$spacer-value}

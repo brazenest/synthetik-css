@@ -1,0 +1,42 @@
+html
+    --headings-line-height: calc(76 / 73) //- was 79/73 ~ 1.08219178
+    --headings-margin-vertical: #{map-get($spacers, 3)}
+
+.italic, em
+    font-style: italic
+.bold, strong
+    --text-bold-weight: #{$text-strong-weight}
+    font-weight: var(--text-bold-weight)
+.small, small
+    font-size: 1em * math-pow($step-value-down, 1)
+
+@for $level from 1 through 10
+    .size-up-#{$level}
+        font-size: 1em * math-pow($step-value-up, $level)
+    .size-down-#{$level}
+        font-size: 1em * math-pow($step-value-down, $level)
+
+
+@for $size from 1 through 6
+    h#{$size}, .h#{$size}, .heading-size-#{(7 - $size)}
+        font-size: 1em * math-pow($step-value-up, 6 - $size)
+        line-height: var(--headings-line-height)
+        margin: var(--headings-margin-vertical) 0
+    .display-size-#{$size}
+        font-weight: $display-text-weight
+        font-size: 1rem * math-pow($step-value-up, 2 + $size)
+
+code
+    background: var(--text-color-inverted)
+    filter: invert(14%)
+    padding: 0 0.25em
+
+.suppend-period
+    &:after
+        content: "."
+.suppend-colon
+    &:after
+        content: ":"
+
+.center
+    text-align: center

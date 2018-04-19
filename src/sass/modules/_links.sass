@@ -1,0 +1,11 @@
+\:root
+    --link-color: #{$link-color}
+    --link-underline-color: #{$link-underline-color}
+    --link-underline-style: #{$link-underline-style}
+    --link-underline-thickness: #{$link-underline-thickness}
+
+a
+    color: var(--link-color)
+    text-decoration: none
+    &:hover
+        border-bottom: var(--link-underline-thickness) var(--link-underline-style) var(--link-underline-color)

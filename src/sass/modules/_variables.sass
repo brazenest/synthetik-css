@@ -1,0 +1,64 @@
+$theme-colors: ( primary: (#5bbf36, white), secondary: (#6969b3, white), accent: (#f05d5e, white), white: (white, black), light: (#fbf5f3, black), dark: (#283f3b, white), black: (black, white), black-alternate: (#141115, white), gray: (gray, white) ) !default
+
+$font-family-sans-serif: Tajawal, "Segoe UI" !default
+
+$base-font-family: $font-family-sans-serif !default
+$base-font-size: 16px !default
+$base-font-weight: normal !default
+
+$text-color: nth(map-get($theme-colors, black), 1) !default
+$text-feather-weight: 100 !default
+$text-weaker-weight: 200 !default
+$text-weak-weight: 300 !default
+$text-strong-weight: 500 !default
+$text-stronger-weight: 700 !default
+$text-heavy-weight: 800 !default
+$text-sumo-weight: 900 !default
+
+$display-text-weight: $text-weak-weight !default
+
+$link-color: nth(map-get($theme-colors, primary), 1) !default
+$link-underline-color: $link-color !default
+$link-underline-style: dotted !default
+$link-underline-thickness: 1px !default
+
+$definition-list-term-weight: $text-stronger-weight !default
+
+$step-value-up: 1.2721 !default
+$step-value-down: 0.7863 !default
+$spacer-base: 1em !default
+
+//
+// THIS IS THE END, MY FRIEND.
+//
+// Below this line be murky waters.
+// Arrrrr... stay away. (Make yer edits prior to this point, matey.)
+//
+
+
+// Immutable values
+
+$golden-ratio: 1.618034
+$golden-ratio-inverse: 1 / $golden-ratio
+$golden-ratio-complement: 1 - $golden-ratio-inverse
+
+$flex-page-main-axis: column
+$flex-page-cross-axis: row
+
+// Grid breakpoints
+
+$grid-breakpoints: () !default
+$grid-breakpoints: map-merge((xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1520px, qhd: 2100px), $grid-breakpoints)
+
++_assert-ascending($grid-breakpoints, "$grid-breakpoints")
++_assert-starts-at-zero($grid-breakpoints)
+
+// Spacers
+
+$spacers: () !default
+$spacers: map-merge((0: 0, 1: ($spacer-base * $golden-ratio-complement / 2), 2: ($spacer-base * $golden-ratio-inverse / 2), 3: ($spacer-base * $golden-ratio-complement), 4: ($spacer-base * $golden-ratio-inverse), 5: $spacer-base, 6: ($spacer-base * (1 + ($golden-ratio-complement / 2))), 7: ($spacer-base * (1 + ($golden-ratio-inverse / 2))), 8: ($spacer-base * (1 + $golden-ratio-complement)), 9: ($spacer-base * $golden-ratio), 10: ($spacer-base * ($golden-ratio + ($golden-ratio-complement / 2)))), $spacers)
+
+// Text weights
+
+$text-weights: () !default
+$text-weights: map-merge((feather: $text-feather-weight, weaker: $text-weaker-weight, weak: $text-weak-weight, normal: $base-font-weight, strong: $text-strong-weight, stronger: $text-stronger-weight, heavy: $text-heavy-weight, sumo: $text-sumo-weight), $text-weights)

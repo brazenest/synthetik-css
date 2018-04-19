@@ -1,0 +1,94 @@
+//
+// Utility mixins and functions for evalutating source code across our variables, maps, and mixins.
+
+// Ascending
+// Used to evaluate Sass maps like our grid breakpoints.
+=_assert-ascending($map, $map-name)
+  $prev-key: null
+  $prev-num: null
+
+  @each $key, $num in $map
+    @if $prev-num == null
+      // Do nothing
+    @else if not comparable($prev-num, $num)
+      @warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !"
+    @else if $prev-num >= $num
+      @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !"
+
+    $prev-key: $key
+    $prev-num: $num
+
+// Starts at zero
+// Another grid mixin that ensures the min-width of the lowest breakpoint starts at 0.
+=_assert-starts-at-zero($map)
+  $values: map-values($map)
+  $first-value: nth($values, 1)
+
+  @if $first-value != 0
+    @warn "First breakpoint in `$grid-breakpoints` must start at 0, but starts at #{$first-value}."
+
+//
+// Math functions.
+
+@function math-pow($number, $exp)
+  @if round($exp) != $exp
+    @return math-exp($exp * math-ln($number))
+
+  // Traditional method for integers
+  $value: 1
+
+  @if $exp > 0
+    @for $i from 1 through $exp
+      $value: $value * $number
+  @else if $exp < 0
+    @for $i from 1 through -$exp
+      $value: $value / $number
+
+  @return $value
+
+@function math-factorial($value)
+  @if $value == 0
+    @return 1
+
+  $result: 1
+
+  @for $index from 1 through $value
+    $result: $result * $index
+
+  @return $result
+
+@function math-summation($iteratee, $input, $initial: 0, $limit: 100)
+  $sum: 0
+
+  @for $index from $initial to $limit
+    $sum: $sum + call($iteratee, $input, $index)
+
+  @return $sum
+
+@function math-exp-maclaurin($x, $n)
+  $result: math-pow($x, $n) / math-factorial($n)
+
+  @return $result
+
+@function math-exp($value)
+  $result: math-summation(math-exp-maclaurin, $value, 0, 100)
+
+  @return $result
+
+@function math-ln-maclaurin($x, $n)
+  $result: math-pow(-1, $n + 1) / $n * math-pow($x - 1, $n)
+
+  @return $result
+
+@function math-ln($value)
+  $ten-exp: 1
+  $ln-ten: 2.30259
+
+  @while $value > math-pow(10, $ten-exp)
+    $ten-exp: $ten-exp + 1
+
+  $value: $value / math-pow(10, $ten-exp)
+
+  $result: math-summation(math-ln-maclaurin, $value, 1, 100)
+
+  @return $result + $ten-exp * $ln-ten
